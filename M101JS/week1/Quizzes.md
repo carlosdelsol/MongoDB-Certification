@@ -3,34 +3,43 @@
 ## QUIZ: WELCOME TO M101JS
 
 What counts toward your final grade in the class?
-* Homeworks
-* Final Exam
+* [ ] Quizzes
+* [X] Homeworks
+* [X] Final Exam
+* [ ] Class Participation
 
 ## QUIZ: WHAT IS MONGODB?
 
 Which of the following statements are true about MongoDB?
-* MongoDB is document oriented.
-* MongoDB is schemaless.
+* [X] MongoDB is document oriented.
+* [ ] MongoDB supports SQL.
+* [ ] MongoDB supports Joins.
+* [X] MongoDB is schemaless.
 
 ## QUIZ: MONGODB RELATIVE TO RELATIONAL
 
 Which features did MongoDB omit in order to retain scalability?
-* Joins
-* Transactions across multiple collections
+* [X] Joins
+* [ ] Secondary Indexes
+* [ ] Indexes
+* [X] Transactions across multiple collections
 
 ## QUIZ: QUICK INTRODUCTION TO THE MONGO SHELL
 
 Which of the following expressions are valid JSON documents for MongoDB?
 Remember, MongoDB doesn't require quotation marks around keys, as they must always be strings.
-* { a : 1, b : 2, c : 3 }
+* [o] { a : 1, b : 2, c : 3 }
+* [ ] { a,1; b, 4, c, 6}
+* [ ] { a : 1; b : 1; c : 4 }
+* [ ] ( A, 1; b : 2; c, 4 }
 
 ## QUIZ: INTRODUCTION TO JSON
 
 Which of the following are JSON documents that the MongoDB shell will accept?
-* { a : 1, b : 2, c : 3 }
-* { a : 1, b : 2, c : [ 1, 2, 3, 4, 5 ] }
-* { a : 1, b : { }, c : [ { a : 1, b : 2 }, 5, 6 ] }
-* { }
+* [X] { a : 1, b : 2, c : 3 }
+* [X] { a : 1, b : 2, c : [ 1, 2, 3, 4, 5 ] }
+* [X] { a : 1, b : { }, c : [ { a : 1, b : 2 }, 5, 6 ] }
+* [X] { }
 
 ## QUIZ: JSON REVISITED
 
@@ -79,14 +88,23 @@ post_tags
 	tag_id
   ```
 In order to display a blog post with its comments and tags, how many tables will need to be accessed?
-* 6
+* [ ] 2
+* [ ] 3
+* [ ] 5
+* [o] 6
 
 ## QUIZ: BLOG IN DOCUMENTS
 
 Given the document schema that we proposed for the blog, how many collections would we need to access to display the blog home page?
-* 1
+* [ ] 0
+* [o] 1
+* [ ] 2
+* [ ] 4
 
 ## QUIZ: BLOG IN DOCUMENTS
 QUIZ: INTRODUCTION TO SCHEMA DESIGN
 In which scenario is it impossible to embed data within a document (you must put the data in it a separate collection)?
-* The embedded data could exceed the 16MB document limit within MongoDB.
+* [ ] You need an index on the data element.
+* [ ] The data would be duplicated across multiple objects within a collection.
+* [o] The embedded data could exceed the 16MB document limit within MongoDB.
+* [ ] The data is not isomorphic.
