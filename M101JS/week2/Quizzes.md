@@ -49,7 +49,7 @@ Supposing a scores collection similar to the one presented, how would you find a
 
 Which of these finds documents with a score between 50 and 60, inclusive?
 * [ ] db.scores.find({ score : { $gt : 50 , $lt : 60 } } );
-* [o] db.scores.find({ score : { $gte : 50 , $lte : 60 } } );
+* [X] db.scores.find({ score : { $gte : 50 , $lte : 60 } } );
 * [ ] db.scores.find({ score : { $gt : 50 , $lte : 60 } } );
 * [ ] db.scores.find({ score : { $gte : 50 , $lt : 60 } } );
 * [ ] db.scores.find({ score : { $gt : 50 } } );
@@ -79,7 +79,7 @@ What will the following query do?
 db.scores.find( { score : { $gt : 50 }, score : { $lt : 60 } } );
 * [ ] Find all documents with score between 50 and 60
 * [ ] Find all documents with score greater than 50
-* [o] Find all documents with score less than 60
+* [X] Find all documents with score less than 60
 * [ ] Explode like the Death Star
 * [ ] None of the above
 
@@ -98,7 +98,7 @@ Which of the following documents matches this query?
 db.users.find( { friends : { $all : [ "Joe" , "Bob" ] }, favorites : { $in : [ "running" , "pickles" ] } } )
 * [ ] { name : "William" , friends : [ "Bob" , "Fred" ] , favorites : [ "hamburgers", "running" ] }
 * [ ] { name : "Stephen" , friends : [ "Joe" , "Pete" ] , favorites : [ "pickles", "swimming" ] }
-* [o] { name : "Cliff" , friends : [ "Pete" , "Joe" , "Tom" , "Bob" ] , favorites : [ "pickles", "cycling" ] }
+* [X] { name : "Cliff" , friends : [ "Pete" , "Joe" , "Tom" , "Bob" ] , favorites : [ "pickles", "cycling" ] }
 * [ ] { name : "Harry" , friends : [ "Joe" , "Bob" ] , favorites : [ "hot dogs", "swimming" ] }
 
 ## QUIZ: QUERIES WITH DOT NOTATION
@@ -118,7 +118,7 @@ When can you change the behavior of a cursor, by applying a sort, skip, or limit
 * [ ] This can be done at any point, and will reset the cursor.
 * [ ] This can only be done when the cursor is created.
 * [ ] This can be done only before the cursor is created.
-* [o] This can be done at any point before the first document is called and before you've checked to see if it is empty.
+* [X] This can be done at any point before the first document is called and before you've checked to see if it is empty.
 * [ ] This can be done at any point, and will apply to any documents the cursor hasn't yet pulled.
 
 ## QUIZ: COUNTING RESULTS
@@ -135,7 +135,7 @@ db.foo.update({_id:"Texas"},{population:30000000})
 What would be the state of the collection after the update?
 * [ ] { "_id" : "Texas", "population" : 2500000, "land_locked" : 1 }
 * [ ] { "_id" : "Texas", "population" : 3000000, "land_locked" : 1 }
-* [o] { "_id" : "Texas", "population" : 30000000 }
+* [X] { "_id" : "Texas", "population" : 30000000 }
 * [ ] { "_id" : ObjectId("507b7c601eb13126c9e3dcca"), "population" : 2500000 }
 
 ## QUIZ: USING THE $SET COMMAND
@@ -181,7 +181,7 @@ What could be a document in the collection?
 * [ ] { "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ]}
 * [ ] {"interests" : [ "cat", "dog" ], "username" : "bar" }
 * [ ] {}
-* [o] { "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ], "username" : "bar" }
+* [X] { "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ], "username" : "bar" }
 
 ## QUIZ: MULTI-UPDATE
 

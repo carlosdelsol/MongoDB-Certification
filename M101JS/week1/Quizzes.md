@@ -28,7 +28,7 @@ Which features did MongoDB omit in order to retain scalability?
 
 Which of the following expressions are valid JSON documents for MongoDB?
 Remember, MongoDB doesn't require quotation marks around keys, as they must always be strings.
-* [o] { a : 1, b : 2, c : 3 }
+* [X] { a : 1, b : 2, c : 3 }
 * [ ] { a,1; b, 4, c, 6}
 * [ ] { a : 1; b : 1; c : 4 }
 * [ ] ( A, 1; b : 2; c, 4 }
@@ -91,13 +91,13 @@ In order to display a blog post with its comments and tags, how many tables will
 * [ ] 2
 * [ ] 3
 * [ ] 5
-* [o] 6
+* [X] 6
 
 ## QUIZ: BLOG IN DOCUMENTS
 
 Given the document schema that we proposed for the blog, how many collections would we need to access to display the blog home page?
 * [ ] 0
-* [o] 1
+* [X] 1
 * [ ] 2
 * [ ] 4
 
@@ -106,5 +106,5 @@ QUIZ: INTRODUCTION TO SCHEMA DESIGN
 In which scenario is it impossible to embed data within a document (you must put the data in it a separate collection)?
 * [ ] You need an index on the data element.
 * [ ] The data would be duplicated across multiple objects within a collection.
-* [o] The embedded data could exceed the 16MB document limit within MongoDB.
+* [X] The embedded data could exceed the 16MB document limit within MongoDB.
 * [ ] The data is not isomorphic.
