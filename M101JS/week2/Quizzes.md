@@ -121,11 +121,79 @@ When can you change the behavior of a cursor, by applying a sort, skip, or limit
 * [o] This can be done at any point before the first document is called and before you've checked to see if it is empty.
 * [ ] This can be done at any point, and will apply to any documents the cursor hasn't yet pulled.
 
-## QUIZ
+## QUIZ: COUNTING RESULTS
 
-## QUIZ
+How would you count the documents in the scores collection where the type was "essay" and the score was greater than 90?
+* db.scores.count({type:"essay", score : { $gt : 90 } })
 
-## QUIZ
+## QUIZ: WHOLESALE UPDATING OF A DOCUMENT
+
+Let's say you had a collection with the following document in it:
+{ "_id" : "Texas", "population" : 2500000, "land_locked" : 1 }
+and you issued the query:
+db.foo.update({_id:"Texas"},{population:30000000})
+What would be the state of the collection after the update?
+* [ ] { "_id" : "Texas", "population" : 2500000, "land_locked" : 1 }
+* [ ] { "_id" : "Texas", "population" : 3000000, "land_locked" : 1 }
+* [o] { "_id" : "Texas", "population" : 30000000 }
+* [ ] { "_id" : ObjectId("507b7c601eb13126c9e3dcca"), "population" : 2500000 }
+
+## QUIZ: USING THE $SET COMMAND
+
+For the users collection, the documents are of the form
+{
+	"_id" : "myrnarackham",
+	"phone" : "301-512-7434",
+	"country" : "US"
+}
+Please set myrnarackham's country code to "RU" but leave the rest of the document (and the rest of the collection) unchanged.
+
+Hint: You should not need to pass the "phone" field to the update query.
+* db.users.update({"_id":"myrnarackham"},{$set:{"country" : "RU"}})
+
+## QUIZ: USING THE $UNSET COMMAND
+
+Write an update query that will remove the "interests" field in the following document in the users collection.
+{
+    "_id" : "jimmy" ,
+    "favorite_color" : "blue" ,
+    "interests" : [ "debating" , "politics" ]
+}
+Do not simply empty the array. Remove the key : value pair from the document.
+* db.users.update({"_id":"jimmy"},{$unset:{"interests" : 1}})
+
+## QUIZ: USING $PUSH, $POP, $PULL, $PUSHALL, $PULLALL, $ADDTOSET
+
+Suppose you have the following document in your friends collection:
+{ _id : "Mike", interests : [ "chess", "botany" ] }
+What will the result of the following updates be?
+db.friends.update( { _id : "Mike" }, { $push : { interests : "skydiving" } } );
+db.friends.update( { _id : "Mike" }, { $pop : { interests : -1 } } );
+db.friends.update( { _id : "Mike" }, { $addToSet : { interests : "skydiving" } } );
+db.friends.update( { _id : "Mike" }, { $pushAll: { interests : [ "skydiving" , "skiing" ] } } );
+* { _id : "Mike", interests : [ "botany", "skydiving", "skydiving" , "skiing" ] }
+
+## QUIZ: UPSERTS
+
+After performing the following update on an empty collection
+db.foo.update( { username : 'bar' }, { '$set' : { 'interests': [ 'cat' , 'dog' ] } } , { upsert : true } );
+What could be a document in the collection?
+* [ ] { "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ]}
+* [ ] {"interests" : [ "cat", "dog" ], "username" : "bar" }
+* [ ] {}
+* [o] { "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ], "username" : "bar" }
+
+## QUIZ: MULTI-UPDATE
+
+Recall the schema of the scores collection:
+{
+	"_id" : ObjectId("50844162cb4cf4564b4694f8"),
+	"student" : 0,
+	"type" : "exam",
+	"score" : 75
+}
+Give every document with a score less than 70 an extra 20 points.
+* db.scores.update({'score':{$lt : 70}},{$inc:{score : 20}},{multi : true})
 
 ## QUIZ
 
